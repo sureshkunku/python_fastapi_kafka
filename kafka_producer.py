@@ -21,4 +21,12 @@ class KafkaProducer:
 
 if __name__ == '__main__':
     kafka_producer = KafkaProducer()
-    kafka_producer.publish({"order_id": 123, "status": "confirmed"})
+    kafka_producer.publish(
+        {
+            "action": "create",
+            "id": 123,
+            "item": 'biryani',
+            "quantity": 10,
+            "price": 1000
+        }
+    )
