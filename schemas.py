@@ -2,7 +2,7 @@ from pydantic import BaseModel
 
 
 class OrderCreate(BaseModel):
-    item_name: str
+    item: str
     quantity: int
     price: float
 

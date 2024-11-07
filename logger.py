@@ -6,7 +6,7 @@ logging.basicConfig(
     level=logging.INFO,  # Set to DEBUG for more verbose output
     handlers=[
         logging.FileHandler("app.log"),  # Log to a file
-        logging.StreamHandler()          # Log to console
+        logging.StreamHandler()  # Log to console
     ]
 )
 

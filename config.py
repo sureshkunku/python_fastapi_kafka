@@ -1,5 +1,4 @@
-import os
-
-KAFKA_BOOTSTRAP_SERVERS = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092")
-KAFKA_TOPIC = os.getenv("KAFKA_TOPIC", "order_updates")
+KAFKA_BOOTSTRAP_SERVERS = "172.23.146.220:9092"
+KAFKA_TOPIC = "order_updates"
+KAFKA_GROUP_ID = "order_group"
 DATABASE_URL = "sqlite:///./orders.db"

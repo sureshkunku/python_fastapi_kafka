@@ -1,10 +1,11 @@
 from confluent_kafka import Producer
 import json
-from config import KAFKA_BROKER_URL, KAFKA_TOPIC
+from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC
 from logger import logger
 
+
 class KafkaProducer:
-    def __init__(self, broker_url=KAFKA_BROKER_URL, topic=KAFKA_TOPIC):
+    def __init__(self, broker_url=KAFKA_BOOTSTRAP_SERVERS, topic=KAFKA_TOPIC):
         self.producer = Producer({"bootstrap.servers": broker_url})
         self.topic = topic
 
@@ -12,7 +13,7 @@ class KafkaProducer:
         self.producer.produce(
             self.topic,
             key=key,
-            value=json.dumps(message)
+            value=json.dumps(message).encode("utf-8")
         )
         self.producer.flush()
         logger.info(f"Published message to topic '{self.topic}': {message}")
