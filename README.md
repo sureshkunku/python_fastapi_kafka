@@ -25,8 +25,8 @@ This project is a simple Order Management System built using FastAPI and SQLAlch
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone git@github.com:sureshkunku/python_fastapi_kafka.git
+cd python_fastapi_kafka
 ```
 
 ### 2. Set Up Python Virtual Environment
