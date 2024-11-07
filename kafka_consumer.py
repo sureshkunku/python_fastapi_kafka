@@ -58,6 +58,7 @@ class KafkaConsumer:
         self.consumer.subscribe([topic])
 
     def consume_and_store(self):
+        logger.info("Consumer started and reading the messages from kafka topic")
         db = SessionLocal()
         try:
             while True:
