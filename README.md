@@ -47,6 +47,7 @@ pip install -r requirements.txt
     wget https://dlcdn.apache.org/kafka/3.5.0/kafka_2.13-3.5.0.tgz
     tar -xzf kafka_2.13-3.5.0.tgz
     mv kafka_2.13-3.5.0 ~/kafka
+    sudo apt install default-jdk -y
     ```
 2. **Start ZooKeeper**:
     ```bash
@@ -56,7 +57,7 @@ pip install -r requirements.txt
     ```bash
     add below two lines on below file 
     vi kafka/config/server.properties
-    advertised.listeners=PLAINTEXT://172.23.146.220:9092
+    advertised.listeners=PLAINTEXT://0.0.0.0:9092
     advertised.listeners=PLAINTEXT://172.23.146.220:9092 -- update your ip address
     ~/kafka/bin/kafka-server-start.sh ~/kafka/config/server.properties
     ```

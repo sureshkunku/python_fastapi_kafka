@@ -7,7 +7,7 @@ import db, models, schemas
 from kafka_producer import KafkaProducer
 from logger import logger
 
-app = FastAPI()
+app = FastAPI(title="Order Management System with FastAPI and Kafka")
 models.Base.metadata.create_all(bind=db.engine)
 producer = KafkaProducer()
 
